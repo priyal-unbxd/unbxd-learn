@@ -1,6 +1,7 @@
 window.UnbxdAnalyticsConf = {
   page: "cat1820001"
 };
+
 window.UnbxdAnalyticsConf["page_type"] = "CATEGORY_PATH";
 const unbxdSearch = new UnbxdSearch({
     siteKey: "demo-unbxd700181503576558",
@@ -79,11 +80,10 @@ const unbxdSearch = new UnbxdSearch({
 unbxdSearch.getCategoryPage();
 const setCategory = function (e) {
   const el = e.target;
-  const { dataset } = el;
-  console.log(dataset, "dataset");
-  if (dataset && dataset.id) {
+  const { data } = el;
+  if (data && data.id) {
     window.UnbxdAnalyticsConf = {
-      page: dataset.id
+      page: data.id
     };
     unbxdSearch.getCategoryPage();
   }
